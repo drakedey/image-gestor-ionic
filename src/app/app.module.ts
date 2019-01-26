@@ -6,6 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage, UploadPage } from "../pages/pages.index";
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBFJLThEfQzmPdtp-ySJhFx09WABYa-27Q",
+  authDomain: "image-gestor-ionic.firebaseapp.com",
+  databaseURL: "https://image-gestor-ionic.firebaseio.com",
+  projectId: "image-gestor-ionic",
+  storageBucket: "image-gestor-ionic.appspot.com",
+  messagingSenderId: "694567969668"
+}
+
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +28,10 @@ import { HomePage, UploadPage } from "../pages/pages.index";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,6 +42,7 @@ import { HomePage, UploadPage } from "../pages/pages.index";
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

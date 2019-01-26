@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-    <img src="https://i.pinimg.com/originals/01/7a/79/017a7911c27ee6d37be71b2a5f1bb78e.jpg" alt="" srcset="">
+  <ion-card *ngFor="let post of posts | async">
+    <img [src]="post.imagen" alt="" srcset="">
     <ion-card-content>
       <ion-card-title>
-        Post 1
+        {{ post.titulo }}
       </ion-card-title>
     </ion-card-content>
     <ion-row>
