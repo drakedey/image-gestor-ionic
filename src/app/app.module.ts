@@ -11,6 +11,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+//Pipes
+import { PipesModule } from '../pipes/pipes.module';
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyBFJLThEfQzmPdtp-ySJhFx09WABYa-27Q",
   authDomain: "image-gestor-ionic.firebaseapp.com",
@@ -31,7 +35,8 @@ const firebaseConfig = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

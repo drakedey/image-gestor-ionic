@@ -14,6 +14,8 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class UploadPage {
 
+  title: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl:ViewController) {
   }
 
