@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { UploadPage } from '../pages.index';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,12 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(private modalCtrl: ModalController) {
+  }
 
+  showModal(): void {
+    const modal = this.modalCtrl.create(UploadPage);
+    modal.present();
   }
 
 }

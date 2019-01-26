@@ -28,6 +28,9 @@ plugins/
 plugins/android.json
 plugins/ios.json
 www/
+-/
+init/
+virtualenv-init/
 $RECYCLE.BIN/
 
 .DS_Store
